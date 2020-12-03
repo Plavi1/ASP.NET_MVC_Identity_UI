@@ -1,4 +1,5 @@
 ﻿using AuthUcenje.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace AuthUcenje.Controllers
 {
+    //Da bi sprecili prikazivanje "home page" pri konektovanju korisnika koji nisu ulogovani na sajt
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
